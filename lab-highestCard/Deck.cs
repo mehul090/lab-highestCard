@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+/*
+ * Name: mehul khosla
+ * Date: July 27, 2017
+ * Description: This is the Deck class.
+ * It inherits from the CardList class
+ * Version: 0.6 - Added Deal5 method
+ */
 namespace lab_highestCard
 {
     class Deck : CardList
@@ -55,7 +61,7 @@ namespace lab_highestCard
         public override string ToString()
         {
             string outputString = "";
-           
+
 
             foreach (Card card in this)
             {
@@ -96,6 +102,22 @@ namespace lab_highestCard
 
             Console.WriteLine("Deck Contains: " + this.Count + " Cards");
             return firstCard;
+        }
+        public Hand Deal5()
+        {
+            Hand hand = new Hand();
+            for (int i = 0; i < 5; i++)
+            {
+                hand.Add((Card)this[0].Clone());
+                this.RemoveAt(0);
+
+            }
+
+            Console.WriteLine(hand.ToString());
+            Console.WriteLine("Deck contains: " + this.Count + " Cards");
+            Console.WriteLine("\n");
+            return hand;
+
         }
     }
 }
