@@ -7,7 +7,7 @@ using System.Text;
  * Date: July 27, 2017
  * Description: This is the Hand class
  * It inherits from the CardList class
- * Version: 0.4 - Fixed a bug - non-implemented _initialize method
+ * Version: 0.5 - Added public method HighestCards
  */
 namespace lab_highestCard
 {
@@ -49,5 +49,29 @@ namespace lab_highestCard
 
                 return outputString;
             }
+        public void HighestCards(Hand h)
+        {
+            var sortCard = from v in h
+                           orderby v.Face descending
+                           select v;
+            int biggestFace = 0;
+            int count = 0;
+            Console.WriteLine("THE HIGHEST CARD IN THE HAND IS:");
+            foreach (Card item in sortCard)
+            {
+                if (count == 0)
+                {
+                    biggestFace = (int)item.Face;
+                }
+                else if ((int)item.Face < biggestFace)
+                {
+                    break;
+                }
+                Console.WriteLine("" + item.Face + " of " + item.Suit);
+                Console.WriteLine("\n");
+                count++;
+
+            }
         }
+    }
     }

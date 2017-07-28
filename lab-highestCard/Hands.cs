@@ -12,9 +12,8 @@ using System.Threading.Tasks;
  */
 namespace lab_highestCard
 {
-    class Hands
-    {
-        public class Hand : CardList
+    
+        public class Hands : CardList
         {
             // PRIVATE INSTANCE VARIABLES
 

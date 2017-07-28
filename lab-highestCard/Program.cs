@@ -33,6 +33,9 @@ namespace lab_highestCard
             */
 
             // hand = deck.Deal5(); // creates a new Hand object and assigns it to hand
+            hand = deck.Deal5();
+
+            hand.HighestCards(hand);
 
         }
     }
